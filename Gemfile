@@ -40,4 +40,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'twitter'
+gem 'oauth'
+gem 'json'
+gem 'figaro'

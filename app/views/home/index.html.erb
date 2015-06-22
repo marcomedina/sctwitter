@@ -5,7 +5,9 @@
 
 <div class="row">
   <div class="col-sm-8 blog-main">
-    <%= render "shared/tweet" %>
+    <% @tweets.each do |tweet| %>
+      <%= render partial:"shared/tweet", locals: {tweet: tweet} %>
+    <% end %>
   </div>
 </div>
 
