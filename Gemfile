@@ -43,3 +43,4 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'oauth'
 gem 'json'
 gem 'figaro'
+gem 'rails_12factor', group: :production
