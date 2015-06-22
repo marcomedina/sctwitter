@@ -1,0 +1,13 @@
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <a class="blog-nav-item active" href="/">Home</a>
+    </nav>
+    <nav class="blog-nav navbar-right">
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'blog-nav-item') %>
+      <% end %>
+    </nav>
+  </div>
+</div>
+
