@@ -13,4 +13,10 @@ module ApplicationHelper
     end
     nil
   end
+
+  def parse_tweet_mentions(tweet)
+    tweet.gsub(/\B@\w+/).each do |username|
+      link_to username, user_timeline_path(username[1..-1])
+    end
+  end
 end
