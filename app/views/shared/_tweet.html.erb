@@ -1,6 +1,8 @@
-<div class="blog-post">
-  <h2 class="blog-post-title"><a href="/<%= tweet['user']['screen_name'] %>">@<%= tweet['user']['screen_name'] %></a></h2>
-  <p class="blog-post-meta"><%= tweet['created_at'] %></p>
-  <p><%= parse_tweet_mentions(tweet['text']).html_safe %></p>
-  <hr />
-</div>
+<% if tweet.is_a? Hash %>
+  <div class="blog-post">
+    <h2 class="blog-post-title"><a href="/<%= tweet['user']['screen_name'] %>">@<%= tweet['user']['screen_name'] %></a></h2>
+    <p class="blog-post-meta"><%= tweet['created_at'] %></p>
+    <p><%= parse_tweet_mentions(tweet['text']).html_safe %></p>
+    <hr />
+  </div>
+<% end %>
