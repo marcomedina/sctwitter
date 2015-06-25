@@ -1,11 +1,12 @@
 require 'json'
+require 'open-uri'
 module Twitter
   class Client
     @@oauth_token = ENV['TWITTER_ACCESS_TOKEN']
     @@oauth_token_secret = ENV['TWITTER_ACCESS_SECRET']
     @@api_key = ENV['TWITTER_API_KEY']
     @@api_secret = ENV['TWITTER_API_SECRET']
-    @@count_limit = 20
+    @@count_limit = 25
     @@cache_hash = {}
     @@cache_expires = 5 # minutes
 
@@ -21,6 +22,7 @@ module Twitter
     end
 
     def search(term)
+      term = URI::encode(term)
       url = "https://api.twitter.com/1.1/search/tweets.json?count=#{@@count_limit}&q=#{term}"
       perform_request url, 'statuses'
     end

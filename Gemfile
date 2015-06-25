@@ -44,3 +44,4 @@ gem 'oauth'
 gem 'json'
 gem 'figaro'
 gem 'rails_12factor', group: :production
+gem 'minitest-rails'
